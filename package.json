@@ -1,0 +1,21 @@
+{
+  "name": "re-exp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "webpack": "^4.43.0"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.1",
+    "webpack-cli": "^3.3.12"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "./node_modules/.bin/live-server --port=8080",
+    "bulid": "./node_modules/.bin/webpack --config config.js",
+    "start": "node ./node_modules/webpack/bin/webpack.js --config config.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

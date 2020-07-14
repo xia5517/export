@@ -1,0 +1,5 @@
+(function() {
+    return {
+        status: false
+    }
+})();

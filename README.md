@@ -144,11 +144,10 @@ aa = 100;
 
 require是 CommonJS的语法，import是es6 module语法。
 
-｜ 区别 ｜ CommonJS ｜ es6 module ｜
-|---|---|---|
-| 本质 | 技术方案 ｜语言标准｜
-| 宿主环境 | 服务器 | 浏览器（node 不支持） |
-| 依赖关系的确定｜运行时｜编译时｜
+- 本质上，CommonJS是技术方案，es6 module是语言标准。
+- 宿主环境上，CommonJS用于服务器，es6 module（node 本身不支持）。
+- 依赖关系的确定时间上，CommonJS运行时确定，es6 module, 其语法再编译阶段执行，在代码运行之前, 依赖关系在编译时就确定了。
+
 
 **举个栗子**
 

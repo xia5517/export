@@ -14,3 +14,6 @@ import status from './com';
 export default function () {
     status.status = 'foo';
 }
+
+// 验证 没有export 的全局声明
+// var bb = [1, 2, 3];

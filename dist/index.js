@@ -118,7 +118,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ 
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _com__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./com */ \"./js/com.js\");\n// export default {\n//     fn: () => {\n//         console.log('这里是foo')\n//     }\n//     // name: 'xxx'\n// };\n\n// export function aa() {\n//     let zz = 1;\n// }\n\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (function () {\n    _com__WEBPACK_IMPORTED_MODULE_0__[\"default\"].status = 'foo';\n});\n\n//# sourceURL=webpack:///./js/foo.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _com__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./com */ \"./js/com.js\");\n// export default {\n//     fn: () => {\n//         console.log('这里是foo')\n//     }\n//     // name: 'xxx'\n// };\n\n// export function aa() {\n//     let zz = 1;\n// }\n\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (function () {\n    _com__WEBPACK_IMPORTED_MODULE_0__[\"default\"].status = 'foo';\n});\n\n// 验证 没有export 的全局声明\n// var bb = [1, 2, 3];\n\n//# sourceURL=webpack:///./js/foo.js?");
 
 /***/ }),
 
@@ -130,7 +130,19 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _com
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _bar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./bar */ \"./js/bar.js\");\n/* harmony import */ var _foo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./foo */ \"./js/foo.js\");\n/* harmony import */ var _com__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./com */ \"./js/com.js\");\n// import {aa} from './foo';\n// // foo.name = \"lisa\";\n// // foo.xx = () => {\n    \n// // }\n\n// console.log('这里是main');\n// console.log(aa)\n\n\n\n\n\nObject(_foo__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n\nObject(_bar__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\n\nconsole.log(_com__WEBPACK_IMPORTED_MODULE_2__[\"default\"]);\nconsole.log(\"66\");\n\n\n//# sourceURL=webpack:///./js/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _bar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./bar */ \"./js/bar.js\");\n/* harmony import */ var _foo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./foo */ \"./js/foo.js\");\n/* harmony import */ var _com__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./com */ \"./js/com.js\");\n/* harmony import */ var _point__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./point */ \"./js/point.js\");\n// import {aa} from './foo';\n// // foo.name = \"lisa\";\n// // foo.xx = () => {\n    \n// // }\n\n// console.log('这里是main');\n// console.log(aa)\n\n\n\n\n\n\n// import {aa, cc} from './point';\n// 验证命名指针绑定\n// console.log(aa)\n\n// 验证模块外修改变量\n// console.log(cc)\n// cc = 'zzz';\n// console.log(cc)\n\n\n// 验证默认导出vs命名导出\n\n\nconsole.log(_point__WEBPACK_IMPORTED_MODULE_3__[\"default\"])\n\nObject(_foo__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\nObject(_bar__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\n\nconsole.log(_com__WEBPACK_IMPORTED_MODULE_2__[\"default\"]);\n\n// 验证 没有export  foo\n// console.log(bb);\n\n\n//# sourceURL=webpack:///./js/main.js?");
+
+/***/ }),
+
+/***/ "./js/point.js":
+/*!*********************!*\
+  !*** ./js/point.js ***!
+  \*********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return foo; });\n// var aa = 1;\n\n// let cc = 'string';\n// export {aa, cc};\n\n// aa = 2222;\n\n// cc = function() {\n\n// };\n\n\nfunction foo() {\n    //\n  }\n\n  foo = 11;\n\n//# sourceURL=webpack:///./js/point.js?");
 
 /***/ })
 

@@ -11,9 +11,26 @@
 import bar from './bar';
 import foo from './foo';
 import status from './com';
-foo();
 
+// import {aa, cc} from './point';
+// 验证命名指针绑定
+// console.log(aa)
+
+// 验证模块外修改变量
+// console.log(cc)
+// cc = 'zzz';
+// console.log(cc)
+
+
+// 验证默认导出vs命名导出
+import aa from './point';
+
+console.log(aa)
+
+foo();
 bar();
 
 console.log(status);
-console.log("66");
+
+// 验证 没有export  foo
+// console.log(bb);

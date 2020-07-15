@@ -1,3 +1,4 @@
-import bar from './bar.js';
-console.log('value of bar:', bar);
-export default 'This is foo.js';
+import {bar} from './bar.js';
+console.log('foo.mjs');
+console.log(bar);
+export let foo = 'foo';

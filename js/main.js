@@ -8,9 +8,9 @@
 // console.log(aa)
 
 
-import bar from './bar';
-import foo from './foo';
-import status from './com';
+// import bar from './bar';
+// import foo from './foo';
+// import status from './com';
 
 // import {aa, cc} from './point';
 // 验证命名指针绑定
@@ -23,14 +23,24 @@ import status from './com';
 
 
 // 验证默认导出vs命名导出
-import aa from './point';
+// import aa from './point';
 
-console.log(aa)
+// console.log(aa)
 
-foo();
-bar();
+// foo();
+// bar();
 
-console.log(status);
+// console.log(status);
 
 // 验证 没有export  foo
 // console.log(bb);
+
+
+// foo('index.js');
+
+// index.js
+// require('./foo.js');
+
+
+import foo from './foo.js';
+foo('index.js');

@@ -2,4 +2,4 @@
 
 // console.log(aa);
 
-import bar from './bar.js'
+import {bar} from './bar.js'

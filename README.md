@@ -42,8 +42,10 @@
 ES6 module：
 - 模块API是静态的，编译时就能确定模块的依赖关系。不可以动态拼接。
 ```
+  // 报错
   import { 'f' + 'oo' } from 'my_module';
 
+  // 报错
   let module = 'my_module';
   import { foo } from module;
 

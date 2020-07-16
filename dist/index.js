@@ -86,27 +86,15 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./js/bar.js":
+/***/ "./js/com.js":
 /*!*******************!*\
-  !*** ./js/bar.js ***!
+  !*** ./js/com.js ***!
   \*******************/
-/*! exports provided: default */
+/*! exports provided: default, abc, aa, bb */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _foo_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./foo.js */ \"./js/foo.js\");\n// import status from './com';\n// export default function () {\n//     status.status = 'bar';\n// }\n\n\n\n// import {foo} from './foo.js';\n// console.log('bar.mjs');\n// console.log(foo);\n// let bar = 'bar';\n// export { \n//     bar\n// };\n\n// bar.js\n\nlet invoked = false;\nfunction bar(invoker) {\n    if(!invoked) {\n        invoked = true;\n        console.log(invoker + ' invokes bar.js');\n        Object(_foo_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('bar.js');\n    }\n}\n/* harmony default export */ __webpack_exports__[\"default\"] = (bar);\n\n// const foo = require('./foo.js');\n// console.log('value of foo:', foo);\n// module.exports = 'This is bar.js';\n\n\n// bar.js\n// import foo from './foo.js';\n// console.log('value of foo:', foo);\n// export default 'This is bar.js';\n\n\n//# sourceURL=webpack:///./js/bar.js?");
-
-/***/ }),
-
-/***/ "./js/foo.js":
-/*!*******************!*\
-  !*** ./js/foo.js ***!
-  \*******************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _bar_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./bar.js */ \"./js/bar.js\");\n// export default {\n//     fn: () => {\n//         console.log('这里是foo')\n//     }\n//     // name: 'xxx'\n// };\n\n// export function aa() {\n//     let zz = 1;\n// }\n\n// import status from './com';\n\n// export default function () {\n//     status.status = 'foo';\n// }\n\n// 验证 没有export 的全局声明\n// var bb = [1, 2, 3];\n\n// import bar from './bar.js';\n// console.log('value of bar:', bar);\n// export default 'This is foo.js';\n\n// import {bar} from './bar.js';\n// console.log('foo.mjs');\n// console.log(bar);\n// export let foo = 'foo';\n\n\nfunction foo(invoker) {\n    console.log(invoker + ' invokes foo.js');\n    Object(_bar_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('foo.js');\n}\n/* harmony default export */ __webpack_exports__[\"default\"] = (foo);\n\n// const bar = require('./bar.js');\n// console.log('value of bar:', bar);\n// module.exports = 'This is foo.js';\n\n\n// import bar from './bar.js';\n// console.log('value of bar:', bar);\n// export default 'This is foo.js';\n\n//# sourceURL=webpack:///./js/foo.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"abc\", function() { return abc; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"aa\", function() { return aa; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"bb\", function() { return bb; });\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n    status: 'false'\n});\n\nfunction aa() {\n}\n\nfunction bb() {\n\n}\n\nconst abc = 12;\n\n\n\n//# sourceURL=webpack:///./js/com.js?");
 
 /***/ }),
 
@@ -118,7 +106,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _bar
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _foo_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./foo.js */ \"./js/foo.js\");\n// import {aa} from './foo';\n// // foo.name = \"lisa\";\n// // foo.xx = () => {\n    \n// // }\n\n// console.log('这里是main');\n// console.log(aa)\n\n\n// import bar from './bar';\n// import foo from './foo';\n// import status from './com';\n\n// import {aa, cc} from './point';\n// 验证命名指针绑定\n// console.log(aa)\n\n// 验证模块外修改变量\n// console.log(cc)\n// cc = 'zzz';\n// console.log(cc)\n\n\n// 验证默认导出vs命名导出\n// import aa from './point';\n\n// console.log(aa)\n\n// foo();\n// bar();\n\n// console.log(status);\n\n// 验证 没有export  foo\n// console.log(bb);\n\n\n// foo('index.js');\n\n// index.js\n// require('./foo.js');\n\n\n\nObject(_foo_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('index.js');\n\n\n//# sourceURL=webpack:///./js/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _com_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./com.js */ \"./js/com.js\");\n// import {aa} from './foo';\n// // foo.name = \"lisa\";\n// // foo.xx = () => {\n    \n// // }\n\n// console.log('这里是main');\n// console.log(aa)\n\n\n// import bar from './bar';\n// import foo from './foo';\n// import status from './com';\n\n// import {aa, cc} from './point';\n// 验证命名指针绑定\n// console.log(aa)\n\n// 验证模块外修改变量\n// console.log(cc)\n// cc = 'zzz';\n// console.log(cc)\n\n\n// 验证默认导出vs命名导出\n// import aa from './point';\n\n// console.log(aa)\n\n// foo();\n// bar();\n\n// console.log(status);\n\n// 验证 没有export  foo\n// console.log(bb);\n\n\n// foo('index.js');\n\n// index.js\n// require('./foo.js');\n\n\n// import foo from './foo.js';\n// foo('index.js');\n\n\n\nconsole.log(_com_js__WEBPACK_IMPORTED_MODULE_0__)\n\n\n//# sourceURL=webpack:///./js/main.js?");
 
 /***/ })
 

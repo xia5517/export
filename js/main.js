@@ -42,5 +42,9 @@
 // require('./foo.js');
 
 
-import foo from './foo.js';
-foo('index.js');
+// import foo from './foo.js';
+// foo('index.js');
+
+import * as com from './com.js';
+
+console.log(com)

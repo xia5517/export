@@ -132,15 +132,96 @@ aa = 100;
 // a => 100
 ```
 
-**默认导入default：模块使用一个导出**
-每个模块只能使用一个默认导出，可以使 import 导入语法简洁。
+**默认导出default：模块使用一个导出**
 
-命名导出vs默认导出
+每个模块只能使用一个默认导出，可以使 import 导入语法简洁。
+命名导出vs默认导出:
 - 命名导出：`export {a as name}`. 可以有多个。
 - 默认导出：`export default fn() {}`, 每个模块只能使用一个默认导出.
 
+
+**导出常量**
+除了导出方法，还有需要导出多模块共享常量的情况，可以使用:
+
+```
+  export const COLS_SPAN = 5;   // => const COLS_SPAN = 5; export { COLS_SPAN }
+```
+
 ## import 
 
+导出后有对应导入的形式：
+用 `export { a }` 命名导出的需要通过具名导入，即与导出的方法一致 `import {a} from './a'`.
+用 `export default fn` 默认导出的可以使用任意名称（当前作用域无重复）进行重命名 `import foo from './fn'`.
+
+从ES6 模块哲学的推荐写法是，必选 API 用默认导出，可选 API 用命名导出。例如：
+
+```
+import react, {component} from 'react'
+```
+
+除了指定加载某个输出值，还可以使用整体加载，即用星号（*）指定一个对象，所有输出值都加载在这个对象上面。
+```
+import * as Utils from './src';
+```
+用此种方法导入的，导出文件中既有默认导出，又有命名导出的，导出对象Utils的结构为：
+
+```
+  {
+    a: ... => 命名导出a
+    b: ... => 命名导出b
+    default: ... => 默认导出
+  }
+```
+所以，对未知插件库的引入慎用 import *;
+
+
+## import export 复合写法
+```
+export { foo, bar } from 'my_module';
+```
+
+可以理解为
+```
+// 可以简单理解为
+import { foo, bar } from 'my_module';
+export { foo, bar };
+```
+
+```
+export { default as makeTcLink } from './makeTcLink';
+export { default as makeTukuOnlineCutImg } from './makeTukuOnlineCutImg';
+export { default as makeVsearchLink } from './makeVsearchLink';
+export { default as formatDate } from './formatDate';
+
+import * as utils from './utils';
+```
+
+utils 目录
+-src
+  - urlHelper -> export default
+  - makeTrim
+  - clone
+  - debounce
+  - throttle
+  - getTpye
+  ....
+  - index -> export {default as urlHelper} from './urlHelper'
+-options -> const optMaps = [];
+-index 
+  ->  import * as utils from './src'; 
+      import optMaps from './options';
+      ... ...
+      export default addParams () { 
+        return optMaps.reduce((total, curr) => {
+          total[curr] = () => {
+            //
+          }
+          return total;
+        }, utils);
+      } 
+
+// import Utils from utils;
+Utils.makeTrim();
 
 **循环依赖**
 
@@ -173,14 +254,12 @@ export default bar;
 import foo from './foo.js';
 ```
 
-
 输出：
 ```
 index.js invokes foo.js
 foo.js invokes bar.js
 bar.js invokes foo.js
 ```
-
 
 可以看到，foo.js 和 bar.js循环依赖的模块均获取到了正确的导出值,下面让我们分析一下代码的执行过程:
 1. index.js作为入口导入了foo.js，此时开始执行foo.js中的代码。

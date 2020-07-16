@@ -2,4 +2,9 @@
 
 // console.log(aa);
 
-import {bar} from './bar.js'
+import {a, add} from './bar.js';
+
+document.getElementById('bn').addEventListener('click', () => {
+    add();
+    console.log(a);
+})

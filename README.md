@@ -172,6 +172,7 @@ import * as Utils from './src';
     default: ... => 默认导出
   }
 ```
+
 所以，对未知插件库的引入慎用 import *;
 
 
@@ -182,10 +183,13 @@ export { foo, bar } from 'my_module';
 
 可以理解为
 ```
-// 可以简单理解为
 import { foo, bar } from 'my_module';
 export { foo, bar };
 ```
+
+`export { foo, bar } from 'my_module'` 这样的写法有个点需要注意:
+
+这样的方式不会将数据添加到该聚合模块的作用域, 也就是说, 你无法在该模块中使用foo.
 
 ```
 export { default as makeTcLink } from './makeTcLink';

@@ -129,11 +129,21 @@ foo 隐藏在内部，bar是对外导出的名字。
 
 导出模块一旦在内部发生了更改，导入模块将会随之改变。
 ```
-var aa = 1;
+let aa = 1;
 export {aa};
 aa = 100;
 
 // a => 100
+
+let val = 23;
+function add() {
+  val++;
+}
+export {
+  add,
+  val
+}
+
 ```
 
 **默认导出default：模块使用一个导出**

@@ -46,5 +46,7 @@
 // foo('index.js');
 
 import * as com from './com.js';
-
-console.log(com)
+console.log(document.getElementById("myBtn"));
+document.getElementById("myBtn").addEventListener("click", () => {
+    com.add();
+})

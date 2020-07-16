@@ -1,17 +1,28 @@
-export default {
-    status: 'false'
-};
+// export default {
+//     status: 'false'
+// };
 
-function aa() {
+// function aa() {
+// }
+
+// function bb() {
+
+// }
+
+// export const abc = 12;
+
+// export {
+//     aa, 
+//     bb
+// };
+
+
+let val = 23;
+function add() {
+  val++;
+  console.log(val);
 }
-
-function bb() {
-
-}
-
-export const abc = 12;
-
 export {
-    aa, 
-    bb
-};
+  add,
+  val
+}

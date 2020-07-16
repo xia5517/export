@@ -2,7 +2,7 @@
 
 ## 背景
 
-传统模块模式基于一个【带有内部变量和函数】的外层函数，以及一个被返回的 public API。
+传统模块概念的简单实现是基于一个【带有内部变量或函数】的函数。
 
 
 ```
@@ -11,8 +11,10 @@
       console.log(arr)
     }
 
+    var len = 0;
     return {
-      show: show
+      show: show,
+      len: len
     };
   }
 
